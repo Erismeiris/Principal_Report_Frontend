@@ -1,0 +1,56 @@
+
+
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-md-8">
+
+            <div class="card card-info">
+                <div class="card-header">
+                  <h3 class="card-title font-weight-bold">Intervention strategies</h3>
+                  
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Grade</th>
+                        <th>Name of responsible teacher</th>
+                        <th>Subject that are underperforming</th>
+                        <th>Intervention strategies</th>
+                        <th>Progress during the month</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of interventionStrategies">
+                        <td>{{item.grade}}</td>
+                        <td>{{item.name_teacher}}</td>
+                        <td>{{item.subject_underperforming}}</td>
+                        <td>{{item.intervention_strategies}}</td>
+                        <td>{{item.progress_in_month}}</td>
+                        <td>{{item.grade}}</td>
+                        <td>
+                          <button class="btn btn-danger btn-sm" (click)="deleteIntervebtionStrategy(item.id_intervention)">Delete</button>
+                        </td>
+                        
+                      </tr>
+                      
+                      
+                    </tbody>
+                  </table>
+                </div>
+                
+               
+              </div>
+            
+        </div>
+        <div class="col-md-4">
+            <h-intervention-strategies></h-intervention-strategies>
+        </div>
+
+    </div>
+    </div>
+</section>

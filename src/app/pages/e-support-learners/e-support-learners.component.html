@@ -1,0 +1,71 @@
+<div class="card card-info">
+    <div class="card-header">
+      <h3 class="card-title font-weight-bold">Support given to learners form</h3>
+      
+    </div>
+    <div class="card-body">
+     
+      <form [formGroup]="supportLearnerForm">
+        <div class="form-group">
+          <label>No of learners in Special Education Class (SE)</label>
+          <div class="input-group">
+            <input type="number" 
+            class="form-control"
+            formControlName="no_learners_special_education">
+          </div>
+      </div>
+        
+      <div class="form-group border p-1">
+        <p class="font-weight-bold">No of learners in Remedial Education Classes</p>
+        <label>Grade</label>
+        <div class="input-group">
+          <select class="form-control"
+               formControlName="grade_remedial">
+             <option *ngFor="let grade of grades">{{grade}}</option>
+          </select>
+        </div>
+       
+        <label>Number</label>
+        <div class="input-group">
+          <input type="number" 
+          class="form-control"
+          formControlName="number_remedial">
+        </div>
+        
+    </div>
+
+
+  <div class="form-group border p-1">
+      <p class="font-weight-bold">No of learners re integrated to Mainstream</p>
+      <label>Grade</label>
+      <div class="input-group">
+        <div class="input-group">
+          <select class="form-control select2bs4 select2-hidden-accessible"
+             style="width: 100%;" 
+              formControlName="grade_integrated">
+                 
+                <option 
+                *ngFor="let grade of grades; let i = index">{{grade}}</option>
+                </select>
+        </div>
+        
+      </div>
+      <label>Number</label>
+      <input type="number" 
+      class="form-control"
+      formControlName="number_integrated">
+    </div>
+
+  <div>
+    <button class="btn btn-success" (click)="createSupportLearner()">Add</button>
+  </div>
+
+       
+
+              
+        
+      </form>
+    </div>
+    <!-- /.card-body -->
+  </div>
+

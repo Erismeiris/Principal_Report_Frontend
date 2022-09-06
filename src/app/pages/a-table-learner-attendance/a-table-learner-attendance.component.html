@@ -1,0 +1,58 @@
+
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-md-5">
+
+            <div class="card card-info">
+                <div class="card-header">
+                  <h3 class="card-title font-weight-bold">Learner attendance per month</h3>
+                  
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Grade</th>
+                        <th>Roll</th>
+                        <th>Actuall attendance</th>
+                        <th>%</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of learnerAttendance">
+                        <td>{{item.grade}}</td>
+                        <td>{{item.roll}}</td>
+                        <td>{{item.actuall_attendance}}</td>
+                        <td><span class="badge bg-danger">{{item.percentage_attendance}}%</span></td>
+                        <td>
+                          <button class="btn btn-primary btn-sm" (click)="deleteLearnerAttendance(item.id_learner_attendance)">Delete</button>
+                        </td>
+                      </tr>
+                     
+                      <tr>
+                        <td class="font-weight-bold">Total</td>
+                        <td class="font-weight-bold">{{TotalRollCall}}</td>
+                        <td class="font-weight-bold">{{TotalAttendance}}</td>
+                        <td class="font-weight-bold"><span class="badge bg-danger">{{PercentageAttendance}}%</span></td>
+                        <td></td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                
+               
+              </div>
+            
+        </div>
+        <div class="col-md-5">
+            <app-a-learner-attendace></app-a-learner-attendace>
+        </div>
+
+    </div>
+    </div>
+</section>

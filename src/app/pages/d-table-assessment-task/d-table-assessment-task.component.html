@@ -1,0 +1,52 @@
+
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-md-6">
+
+            <div class="card card-info">
+                <div class="card-header">
+                  <h3 class="card-title font-weight-bold">SBA Number of School Based Assessment Tasks Per Grade</h3>
+                  
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Term</th>
+                        <th>Grade</th>
+                        <th>Task</th>
+                        <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      
+                      <tr *ngFor="let item of tasks">
+                        <td>{{item.term}}</td>
+                        <td>{{item.grade}}</td>
+                        <td>{{item.task}}</td>
+                        <td>
+                          <button class="btn btn-danger" (click)="deleteTask(item.id_sba)">Delete</button>
+                        </td>
+                       
+                      </tr>
+                     
+                                
+                      
+                    </tbody>
+                  </table>
+                </div>
+                
+               
+              </div>
+            
+        </div>
+        <div class="col-md-6">
+            <d-assessment-task></d-assessment-task>
+        </div>
+
+    </div>
+    </div>
+</section>

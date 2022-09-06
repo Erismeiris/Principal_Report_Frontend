@@ -1,0 +1,64 @@
+
+
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-md-9">
+
+            <div class="card card-info">
+                <div class="card-header">
+                  <h3 class="card-title font-weight-bold">Schools list</h3> <br>
+                 
+                  
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>School name</th>
+                        <th>Principal'n name</th>
+                        <th>Grades</th>
+                        <th>Password</th>
+                        <th>District</th>
+                        <th>Action</th>
+                       
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let school of schoolList; let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{school.school_name}}</td>
+                        <td>{{school.principal_name}}</td>
+                        <td>{{school.grades}}</td>
+                        <td>{{school.password}}</td>
+                        <td>{{school.district_name}}</td>
+                        <td>
+                          <button class="btn btn-primary mr-2" routerLink="/dashboard/edit-school/{{school.id_school}}">Edit</button>
+                          <button class="btn btn-danger" (click)="deleteSchool(school)">Delete</button>
+                        </td>
+                        
+                        
+                      </tr>
+                      
+                      
+                    </tbody>
+                  </table>
+                </div>
+                
+               
+              </div>
+            
+        </div>
+        
+
+    </div>
+    </div>
+</section>
+
+
+
+
+

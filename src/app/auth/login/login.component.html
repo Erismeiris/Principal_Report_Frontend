@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="row mt-2">
+    <div class="col-1">
+      <label class="form-label">Are you? :</label>
+    </div>
+    <div class="col-3">
+      <label class="form-label m-2">Principal</label>
+      <input type="radio"  checked [(ngModel)] = 'user' value="principal" >
+      <label class="form-label m-2">Admin</label>
+      <input type="radio"  [(ngModel)] = 'user'  value="admin" >
+    </div>
+
+  </div>
+  <div class="content-wrapper mt-5">
+
+    <div class="row">
+
+      <div class="col-md-6" id="bodyForm" *ngIf="user === 'admin'">
+        <div class="card-header" id="card-header">
+          <h3 class="card-title">Admin Login</h3>
+          <div class="text-center">
+            <button (click)="home()" class="btn btn-success pointer">
+              <i class="fas fa-home"></i>
+              </button>
+          </div>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email"
+                placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                formControlName="password">
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" formControlName="remember" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Remind email</label>
+            </div>
+          </div>
+          <!-- /.card-body -->
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Send</button>
+          </div>
+
+
+        </form>
+
+      </div>
+
+      <div class="col-md-6" id="bodyForm" *ngIf="user === 'principal'">
+        <div class="card-header" id="card-header">
+          <h3 class="card-title">School Login</h3>
+          <div class="text-center">
+            <button (click)="home()" class="btn btn-success pointer">
+              <i class="fas fa-home"></i>
+              </button>
+          </div>
+        </div>
+        <form [formGroup]="schoolLoginForm" (ngSubmit)="loginSchool()">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="exampleInputEmail1">School Name</label>
+              <input type="text" class="form-control" formControlName="school_name" placeholder="School Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" placeholder="Password" formControlName="password">
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" formControlName="remember" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Remind school name</label>
+            </div>
+
+          </div>
+          <!-- /.card-body -->
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary" [disabled]="this.schoolLoginForm.invalid">Send</button>
+          </div>
+        </form>
+
+        
+       
+      </div>
+    </div>
+  </div>
+
+</div>

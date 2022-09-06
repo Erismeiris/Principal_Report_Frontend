@@ -1,0 +1,43 @@
+<div class="card card-info margin">
+    <div class="card-header">
+      <h3 class="card-title font-weight-bold">Participation in extracurricular activities Form</h3>
+      
+    </div>
+    <div class="card-body">
+      <!-- Color Picker -->
+      <form [formGroup]="extracurriculumForm" (ngSubmit)="createExtraActivity()">
+                
+      <div class="form-group">
+        <label>Date of activity</label>
+        <div class="input-group">
+          <input type="date" class="form-control" formControlName="activity_date">
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Activity</label>
+        <div class="input-group">
+          <input type="text" class="form-control" formControlName="activity">
+        </div>
+     </div>
+
+     <div class="form-group">
+        <label>Number of learners involved</label>
+        <div class="input-group">
+          <input type="number" class="form-control" formControlName="learner_involved">
+        </div>
+     </div>
+    
+     <div>
+        <button type="submit" class="btn btn-primary" [disabled]="!extracurriculumForm.valid">Submit</button>
+     </div>
+          
+      
+      </form>
+    </div>
+    <!-- /.card-body -->
+  </div>
+
+
+
+
+

@@ -1,0 +1,112 @@
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+
+        <div class="card card-info">
+          <div class="card-header">
+            <h3 class="card-title font-weight-bold">Support given to learners</h3>
+            <span class="float-right"><button class="btn btn-warning" (click)="showIf()">Show form</button></span>
+
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <h4>Support Classes</h4>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>No of learners in Special Education Class (SE)</th>
+                  <th colspan="2">No of learners in Remedial Education Classes</th>
+                  <th colspan="2">No of learners re integrated to Mainstream</th>
+                  <th>Action</th>
+                </tr>
+                <tr>
+                  <th ></th>
+                  <th>Grade</th>
+                  <th>Number</th>
+                  <th>Grade</th>
+                  <th>Number</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                <tr *ngFor="let item of supportLearners">
+                  <td>{{item.no_learners_special_education}}</td>         
+                  <td>{{item.grade_remedial}}</td>
+                  <td>{{item.number_remedial}}</td>
+                  <td>{{item.grade_integrated}}</td>
+                  <td>{{item.number_integrated}}</td>
+                  <td><button class="btn btn-danger" (click)="deleteSupportLearners(item.id_support_learners)">Delete</button></td>
+                </tr>
+
+
+
+              </tbody>
+            </table>
+          </div>
+
+
+        </div>
+
+
+        <hr>
+
+        <div class="card card-info">
+          <div class="card-header">
+            <h3 class="card-title font-weight-bold">Support given to learners</h3>
+            <span class="float-right"><button class="btn btn-warning" (click)="showIf2()">Show form</button></span>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <h4>Data of Learners in need of other Support per Grade</h4>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Orphaned Learners</th>
+                  <th>From Child Headed Households</th>
+                  <th>Teenage Pregnancy</th>
+                  <th>Receiving support at School level (Specify e.g., Accommodations)</th>
+                  <th>Referred to DBST (Specify e.g., Psychosocial, scholastic, etc)</th>
+                  <th>Cases successfully closed</th>
+                  <th>Living with disabilities e.g., Autism spectrum, physical, etc</th>
+                  <th>Action</th>
+                  
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of supportGivenTolearner">
+                  
+                  <td>{{item.orphaned}}</td>
+                  <td>{{item.households}}</td>
+                  <td>{{item.teenage_pregnancy}}</td>
+                  <td>{{item.receiving_support_at_school}}</td>
+                  <td>{{item.referred_to_DBST}}</td>
+                  <td>{{item.cases_successfully_closed}}</td>
+                  <td>{{item.living_with_disabilities}}</td>
+                  <td>
+                    <button class="btn btn-danger" (click)="deleteSupportGivenToLearner(item.id_support_given_to_learners)">Delete</button>
+                  </td>
+                 
+                </tr>
+                
+
+
+
+              </tbody>
+            </table>
+          </div>
+
+
+        </div>
+
+      </div>
+      <div class="col-md-3">
+        <e-support-learners *ngIf="show1 === true"></e-support-learners>
+        <f-support-learners *ngIf="show2 === true"></f-support-learners>
+      </div>
+
+    </div>
+  </div>
+</section>

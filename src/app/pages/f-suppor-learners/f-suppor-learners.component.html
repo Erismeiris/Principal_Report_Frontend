@@ -1,0 +1,67 @@
+<div class="card card-info margin">
+    <div class="card-header">
+      <h3 class="card-title font-weight-bold">Data of Learners in need of other Support per Grade</h3>
+      
+    </div>
+    <div class="card-body">
+      <!-- Color Picker -->
+      <form [formGroup]="createSuportGivenToLearnerForm" (ngSubmit)="createSupportGivenToLearner()">
+        <div class="form-group">
+          <label>Orphaned Learners</label>
+          <div class="input-group">
+            <input type="number" class="form-control"
+            formControlName="orphaned">
+          </div>
+      </div>
+        
+      <div class="form-group border p-1">
+        <label>From Child Headed Households</label>
+        <div class="input-group">
+          <input type="number" class="form-control" formControlName="households">
+        </div>
+    </div>
+    <div class="form-group border p-1">
+        <label>Teenage Pregnancy</label>
+        <div class="input-group">
+          <input type="number" class="form-control" formControlName="teenage_pregnancy">
+        </div>
+     </div>
+
+     <div class="form-group border p-1">
+        <label>Receiving support at School level</label>
+        <div class="input-group">
+          <input type="number" class="form-control" formControlName="receiving_support_at_school">
+        </div>
+     </div>
+     <div class="form-group border p-1">
+        <label>Referred to DBST</label>
+        <div class="input-group">
+          <input type="number" class="form-control" formControlName="referred_to_DBST">
+        </div>
+     </div>
+     <div class="form-group border p-1">
+        <label>Cases successfully closed</label>
+        <div class="input-group">
+          <input type="number" class="form-control" formControlName="cases_successfully_closed">
+        </div>
+     </div>
+     <div class="form-group border p-1">
+        <label>Living with disabilities</label>
+        <div class="input-group">
+          <input type="number" class="form-control" formControlName="living_with_disabilities">
+        </div>
+     </div>
+
+
+      <div>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+
+              
+        
+      </form>
+    </div>
+    <!-- /.card-body -->
+  </div>
+
+

@@ -1,0 +1,23 @@
+<div class="card card-info margin">
+    <div class="card-header">
+        <h3 class="card-title font-weight-bold">Create Report Form</h3>
+    </div>
+    <div class="card-body">
+        <!-- Color Picker -->
+        <form [formGroup]="createReportForm" (ngSubmit)="createReport()">
+
+            <div class="form-group"> 
+                <label>Month Report</label>
+                <div class="input-group">
+                    <input type="date" class="form-control datetimepicker-input" 
+                    data-target="#timepicker"  formControlName="report_month" >
+                </div>
+            </div>
+            
+
+            <button type="submit"  class="btn btn-primary mt-2">Create</button>
+        
+        </form>
+    </div>
+    <!-- /.card-body -->
+</div>

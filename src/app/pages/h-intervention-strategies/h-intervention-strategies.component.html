@@ -1,0 +1,57 @@
+<div class="card card-info margin">
+    <div class="card-header">
+      <h3 class="card-title font-weight-bold">Intervention Strategies Form</h3>
+      
+    </div>
+    <div class="card-body">
+      <!-- Color Picker -->
+   
+    <form [formGroup]="strategyForm"  (ngSubmit)="createInterventionStrategy()">
+        <div class="form-group">
+          <label>Grade</label>
+          <div class="input-group">
+            <select class="form-control" formControlName="grade">
+                <option *ngFor="let grade of grades">{{grade}}</option>
+            </select>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label>Name of responsible teacher</label>
+        <div class="input-group">
+          <input type="text" class="form-control" formControlName="name_teacher">
+        </div>
+    </div>
+        
+      <div class="form-group">
+        <label>Subject that are underperforming</label>
+        <div class="input-group">
+          <input type="text" class="form-control" formControlName="subject_underperforming">
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Intervention strategies</label>
+        <div class="input-group">
+          <input type="text" class="form-control" formControlName="intervention_strategies">
+        </div>
+     </div>
+
+     <div class="form-group">
+        <label>Progress during the month</label>
+        <div class="input-group">
+          <input type="text" class="form-control" formControlName="progress_in_month">
+        </div>
+     </div>
+    
+        <div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>  
+      
+      </form>
+    </div>
+    <!-- /.card-body -->
+  </div>
+
+
+
+

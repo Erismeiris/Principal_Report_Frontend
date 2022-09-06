@@ -1,0 +1,86 @@
+<div class="row">
+    <div class="col-md-5 ml-5">
+  
+      <div class="card card-info">
+        <div class="card-header">
+          <h3 class="card-title font-weight-bold">Add School Form</h3>
+        </div>
+        <div class="card-body">
+          <!-- Color Picker -->
+    
+          <form [formGroup]="editSchoolForm"
+          (ngSubmit)="updateSchool()">
+
+        
+        <div class="form-group">
+          <label>id_school</label>
+          <input type="number" class="form-control" 
+          formControlName="id_school">
+  
+        </div>
+  
+          <div class="form-group">
+            <label>Dsitrict</label>
+            <select class="input-group" formControlName="id_district">
+              <option value="">Select District</option>
+              <option *ngFor="let district of districtList" [value]="district.id_district">{{district.district_name}}</option>
+            </select>
+    
+          </div>
+            <div class="form-group">
+              <label>School name</label>
+              <input type="text" class="form-control" 
+              formControlName="school_name">
+      
+            </div>
+      
+        
+            <div class="form-group">
+              <label>Principal's name</label>
+               <div class="input-group" >
+                <input type="text" class="form-control" 
+                formControlName="principal_name">
+              </div>
+      
+            </div>
+      
+            <div class="form-group">
+              <label>Create a password</label>
+              <div class="input-group" data-colorpicker-id="2">
+                <input type="text" 
+                class="form-control" 
+                formControlName="password">
+              </div>
+            </div>
+      
+            
+      
+            <div class="form-group">
+            <label>Grades</label>
+              <div class="input-group" data-colorpicker-id="2">
+                <input type="text" 
+                class="form-control" 
+                formControlName="grades">
+              </div>
+      
+            
+      
+            </div>
+            <button type="submit" [disabled]="editSchoolForm.invalid" class="btn btn-primary mt-2">Update</button>
+      
+          </form>
+  
+          <div>
+            
+            <p>
+            <button routerLink="/dashboard/school-list" class="btn btn-success mt-5">Show Schools List</button>
+  
+          </p>
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+  
+    </div>
+  </div>
+  

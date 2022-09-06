@@ -1,0 +1,16 @@
+
+
+.white{
+    color: white;
+    padding-left: 40px;
+}
+
+.img{
+    width: 25px;
+    height: 25px;
+    background-color: white;
+}
+
+.pointer{
+    cursor: pointer;
+}

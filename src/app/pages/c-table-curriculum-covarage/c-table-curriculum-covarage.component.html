@@ -1,0 +1,52 @@
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+
+        <div class="card card-info">
+          <div class="card-header">
+            <h3 class="card-title font-weight-bold">Curriculum coverage</h3>
+
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table class="table table-bordered">
+              <thead>
+                <tr class="tex-ali">
+                  <th>Grade</th>
+                  <th>Subjects that are behind per grade</th>
+                  <th>Names of subject teachers</th>
+                  <th>Availability of catch-up programme</th>
+                  <th>Progress on monitoring</th>
+                  <th>Action</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of curriculumCoverage">
+                  <td>{{item.grade}}</td>
+                  <td>{{item.subjects_behind_per_grade}}</td>
+                  <td>{{item.names_subject_teachers}}</td>
+                  <td>{{item.catchup_programme}}</td>
+                  <td>{{item.progress_monitoring}}</td>
+                  <td>
+                    <button class="btn btn-danger" (click)="deleteCurriculumCoverage(item.id_curriculum_coverage)">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+        </div>
+
+      </div>
+      <div class="col-md-4">
+        <c-curriculum-covarage>
+
+        </c-curriculum-covarage>
+      </div>
+
+    </div>
+  </div>
+</section>

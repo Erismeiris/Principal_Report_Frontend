@@ -1,0 +1,61 @@
+<div class="card card-info">
+    <div class="card-header">
+      <h3 class="card-title font-weight-bold">Teacher attendace form</h3>
+    </div>
+    <div class="card-body">
+      <!-- Color Picker -->
+      <form [formGroup]="CurriculumForm" (ngSubmit)="createCurriculum()">
+        <div class="form-group">
+            <label>Grade</label>
+            <select class="form-control select2bs4 select2-hidden-accessible"
+             style="width: 100%;" 
+              formControlName="grade">
+                <option 
+                *ngFor="let grade of grades">{{grade}}</option>
+                </select>
+          </div>
+      <!-- /.form group -->
+
+      <!-- Color Picker -->
+      <div class="form-group">
+        <label>Subjects that are behind per grade</label>
+
+        <div class="input-group">
+          <input type="text" class="form-control" formControlName="subjects_behind_per_grade">
+         
+        </div>
+        
+      </div>
+      
+      
+        <div class="form-group">
+          <label>Names of subject teachers</label>
+          <div class="input-group date">
+            <input type="text" class="form-control" formControlName="names_subject_teachers">
+          </div>
+         
+        </div>
+        <div class="form-group">
+            <label>Availability of catch-up programme</label>
+            <div class="input-group">
+              <input type="text" class="form-control" formControlName="catchup_programme">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Progress on monitoring</label>
+            <div class="input-group" >
+              <input type="text" class="form-control" formControlName="progress_monitoring">
+            </div>
+        </div>
+
+        <div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+              
+        
+      </form>
+    </div>
+    <!-- /.card-body -->
+  </div>

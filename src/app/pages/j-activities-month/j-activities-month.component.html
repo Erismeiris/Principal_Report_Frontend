@@ -1,0 +1,67 @@
+<div class="card card-info margin">
+    <div class="card-header">
+      <h3 class="card-title font-weight-bold">SGB activities for the month Form</h3>
+   </div>
+    <div class="card-body">
+      <!-- Color Picker -->
+      <form >
+
+        <div class="form-group">
+          <label for="activities" >Kind of activities</label>
+          <select name="activity" [(ngModel)] = activity id="" class="form-control">
+            <option  *ngFor="let activity of activitiesKind" >{{activity}}</option>
+          </select>
+        </div>
+
+        <div class="form-group" *ngIf="activity === 'Finance_Committee'">
+          <label for="activities">Activities Finance Committee</label>
+          <select name="" id="" class="form-control">
+            <option value="" *ngFor="let activity of financeCommittee">{{activity}}</option>
+          </select>
+        </div>
+        <div class="form-group" *ngIf="activity === 'Human_Resource_functions'" #sellected>
+          <label for="activities">Activities Human Resource Functions</label>
+          <select name="" id="" class="form-control">
+            <option value="" *ngFor="let activity of humanResource">{{activity}}</option>
+          </select>
+        </div>
+      <div *ngIf ="activity === 'Human_Resource_functions' || activity === 'Finance_Committee' ">      
+      <div class="form-group">
+        <label>Date of activity</label>
+        <div class="input-group">
+          <input type="date" class="form-control datetimepicker-input" data-target="#timepicker">
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Achievements</label>
+        <div class="input-group">
+          <input type="text" class="form-control datetimepicker-input" data-target="#timepicker">
+        </div>
+     </div>
+
+     <div class="form-group">
+        <label>Challenges</label>
+        <div class="input-group">
+          <input type="text" class="form-control datetimepicker-input" data-target="#timepicker">
+        </div>
+     </div>
+     <div class="form-group">
+      <label>Corrective Measures</label>
+      <div class="input-group">
+        <input type="text" class="form-control datetimepicker-input" data-target="#timepicker">
+      </div>
+   </div>
+  </div> 
+    
+          
+      
+      </form>
+    </div>
+    <!-- /.card-body -->
+  </div>
+
+
+
+
+
+

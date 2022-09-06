@@ -1,0 +1,55 @@
+
+
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-md-8">
+
+            <div class="card card-info">
+                <div class="card-header">
+                  <h3 class="card-title font-weight-bold">SAMS curriculum recording</h3>
+                  
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Dates of submissions</th>
+                        <th>Name of responsible teacher</th>
+                        <th>Actual date on which data was captured</th>
+                        <th>Challenges experienced</th>
+                        <th>Verification by SMT</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of curriculumRecord">
+                        <td>{{item.dates_submissions}}</td>
+                        <td>{{item.name_responsible_teacher}}</td>
+                        <td>{{item.actual_date}}</td>
+                        <td>{{item.challenges_experienced}}</td>
+                        <td>{{item.verification_by_SMT}}</td>
+                        <td>
+                          <button class="btn btn-danger btn-sm" (click)="deleteCurrilumRecord(item.id_curriculum_record)">Delete</button>
+                        </td>
+                       
+                      </tr>
+                      
+                      
+                    </tbody>
+                  </table>
+                </div>
+                
+               
+              </div>
+            
+        </div>
+        <div class="col-md-4">
+            <g-curriculum-record></g-curriculum-record>
+        </div>
+
+    </div>
+    </div>
+</section>

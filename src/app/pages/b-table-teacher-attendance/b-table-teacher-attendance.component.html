@@ -1,0 +1,61 @@
+
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-md-8">
+
+            <div class="card card-info">
+                <div class="card-header">
+                  <h3 class="card-title font-weight-bold">Teacher attendance per month</h3>
+                  
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr class="tex-ali">
+                        <th>No</th>
+                        <th>Name of teacher</th>
+                        <th>Days absent</th>
+                        <th>Type of leave taken</th>
+                        <th>Date on which leave forms submitted to District office</th>
+                        <th>Did the teacher submit catch up programme? If no why? </th>
+                        <th>What type of action was taken against the teacher who has not submitted catch up programme </th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of teacherAttendance; let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{item.teacher_name}}</td>
+                        <td>{{item.days_absent}}</td>
+                        <td>{{item.type_leave}}</td>
+                        <td>{{item.date_leave_submitted | date:'mediumDate'}}</td>
+                        <td>{{item.submitted}}</td>
+                        <td>{{item.actions}}</td>
+                        <td>
+                          
+                          <button class="btn btn-danger" (click)="deleteTeacherAttendance(item.id_teacher_attendance)">Delete</button>
+                        </td>
+                      </tr>
+                      
+                     
+                      
+                    </tbody>
+                  </table>
+                </div>
+                
+               
+              </div>
+            
+        </div>
+        <div class="col-md-4">
+            <app-b-teacher-attendance>
+                
+            </app-b-teacher-attendance>
+        </div>
+
+    </div>
+    </div>
+</section>

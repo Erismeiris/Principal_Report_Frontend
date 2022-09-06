@@ -1,0 +1,58 @@
+
+
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-md-4">
+
+            <div class="card card-info">
+                <div class="card-header">
+                  <h3 class="card-title font-weight-bold">Create Report</h3> <br>
+                 
+                  
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table class="table table-bordered">
+                    <thead>
+                      
+                      <tr>
+                        <th>Month</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      
+                        <tr *ngFor="let report of reports">
+                                                  
+                          <td>{{report.report_name}}</td>
+                          <td>
+                            <button type="button" class="btn btn-primary" (click)="deleteReport(report)">Delete</button>
+                            
+                          </td>
+                        
+                        </tr>
+                      
+                     
+                      
+                      
+                    </tbody>
+                  </table>
+                </div>
+                
+               
+              </div>
+            
+        </div>
+        <div class="col-md-5">
+            <report-form></report-form>
+        </div>
+
+    </div>
+    </div>
+</section>
+
+
+
+
